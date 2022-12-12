@@ -30,8 +30,7 @@ FROM
     
 ----------------------------------------------------------------------------------------------
 
-/* 3. Provide the name for each region for every order, as well as the account name and the unit price 
-they paid (total_amt_usd/total) for the order. */
+/* 3. Account name and unit price paid (total_amt_usd/total) for the order. */
 
 SELECT 
     a.name AS account_name,

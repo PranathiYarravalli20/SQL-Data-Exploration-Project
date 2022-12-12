@@ -1,4 +1,4 @@
-/* Total sales made by each sales_reps and rank category assigned */
+/* 1. Total sales made by each sales_reps and rank category assigned */
 
 SELECT 
     rep_name,
@@ -33,7 +33,7 @@ ORDER BY total_sales DESC;
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* No of orders in the region with Highest sales. */
+/* 2. No of orders in the region with Highest sales. */
 
  SELECT 
     r.name, COUNT(*) as orders_count
@@ -62,7 +62,7 @@ WHERE
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Sales Rep in each region who made maximum total sales */
+/* 3. Sales Rep in each region who made maximum total sales */
         
 with t1 AS (SELECT r.name region_name,s.name rep_name,  SUM(o.total_amt_usd) Sales_made
 				  FROM papersales.orders o 

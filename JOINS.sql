@@ -17,7 +17,7 @@ WHERE
     a.name = 'Walmart';
 
 ----------------------------------------------------------------------------------------------
-/* Table that provides the region for each sales_rep along with their associated accounts. */
+/* 2. Table that provides the region for each sales_rep along with their associated accounts. */
 
 SELECT 
     r.name as region, s.name as sales_rep_name , a.name AS account_name
@@ -29,7 +29,7 @@ FROM
     papersales.region r ON r.id = s.region_id;
     
 ----------------------------------------------------------------------------------------------
-/* Account name and the unit price paid (total_amt_usd/total) for the order. */
+/* 3. Account name and the unit price paid (total_amt_usd/total) for the order. */
 
 SELECT 
     a.name AS account_name,

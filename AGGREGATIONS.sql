@@ -1,4 +1,4 @@
--- Unique Accounts
+-- 1. Unique Accounts
 
 SELECT 
     COUNT(DISTINCT (a.name)) AS Account_name_count
@@ -7,7 +7,7 @@ FROM
 
 ----------------------------------------------------------------------------------------------
 
-/* To test if there are any accounts associated with more than one region */
+/* 2. To test if there are any accounts associated with more than one region */
 
 SELECT DISTINCT
     a.name, r.name AS region_name
@@ -19,7 +19,7 @@ FROM
     papersales.region r ON r.id = s.region_id
 GROUP BY a.name;
 
-----------------------------------------------------------------------------------------------
+
 
 SELECT 
     COUNT(*)
@@ -34,7 +34,7 @@ FROM
 
 ----------------------------------------------------------------------------------------------
 
-/* Total Sales made by each account */
+/* 3. Total Sales made by each account */
 
 SELECT DISTINCT
     (a.name),

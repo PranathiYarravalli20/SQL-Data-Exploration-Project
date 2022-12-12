@@ -75,4 +75,4 @@ Queries answered using sub queries & CTE:
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### SQL SERVER:
-MY SQL Workbench version 8.0 is used for this project and SQL quering.
+MY SQL Workbench version 8.0 is used for project and SQL quering.

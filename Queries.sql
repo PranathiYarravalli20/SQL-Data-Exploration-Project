@@ -1,4 +1,4 @@
-/* Sales reps worked on more than one account? */
+/* 1. Sales reps worked on more than one account? */
 
 select s.name as salrep_name,count(*) as acc
 from papersales.accounts a 
@@ -10,7 +10,7 @@ order by 2 desc;
 -- Sale Rep's work on more than one account
 ------------------------------------------------------------------------------------------------------------------
 
-/* Sales reps have more than 3 accounts that they manage? */
+/* 2. Sales reps have more than 3 accounts that they manage? */
 
 SELECT 
     s.name AS salrep_name, COUNT(*) AS acc
@@ -24,7 +24,7 @@ ORDER BY 2;
 
 --------------------------------------------------------------------------------------------------------------------
 
-/* Accounts have more than 5 orders? */
+/* 3. Accounts have more than 5 orders? */
 
 SELECT 
     a.id, a.name, COUNT(*) AS no_of_orders
@@ -38,7 +38,7 @@ ORDER BY 3;
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Account has the most orders? */
+/* 4. Account has the most orders? */
 
 SELECT 
     a.name, COUNT(*) AS no_of_orders
@@ -52,7 +52,7 @@ LIMIT 1;
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Accounts spent more than 30,000 USD total across all orders? */
+/* 5. Accounts spent more than 30,000 USD total across all orders? */
 
 SELECT 
     a.id, a.name, tb.total
@@ -69,7 +69,7 @@ ORDER BY tb.total DESC;
 
 ------------------------------------------------------------------------------------------------------------------
 
-/*  Accounts used facebook as a channel to contact customers more than 6 times? */
+/* 6. Accounts used facebook as a channel to contact customers more than 6 times? */
 
 SELECT 
     a.name AS acc_name, COUNT(*) AS fb_usage
@@ -84,7 +84,7 @@ HAVING fb_usage > 2;
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Channel was most frequently used by most accounts? */
+/* 7. Channel was most frequently used by most accounts? */
 
 SELECT 
     w.channel, COUNT(DISTINCT a.name) AS count
@@ -97,14 +97,14 @@ ORDER BY count DESC;
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Ranking Total Paper Ordered by each Account */
+/* 8. Ranking Total Paper Ordered by each Account */
 
 select id,account_id,total,rank() over(partition by account_id order by total desc) total_rank
 from papersales.orders;
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Sales Representatives working in Midwest region */
+/* 9. Sales Representatives working in Midwest region */
 
 SELECT 
     s.name rep_name, a.name acc_name, r.name region
@@ -121,7 +121,7 @@ ORDER BY a.name;
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Total Sales by each account */
+/* 10. Total Sales by each account */
 
 SELECT 
     a.name, SUM(o.total_amt_usd) AS Total_Sales
@@ -133,7 +133,7 @@ GROUP BY a.name;
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Checking if each account has more than one primary_poc */
+/* 11. Checking if each account has more than one primary_poc */
 
 select count(*) as poc from (SELECT 
     a.name, a.primary_poc, COUNT(*) as count
@@ -147,7 +147,7 @@ ORDER BY count DESC) as POC;
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Sales across years */
+/* 12. Sales across years */
 
 SELECT 
     DATE_PART(year, o.occurred_at) AS sales_year,

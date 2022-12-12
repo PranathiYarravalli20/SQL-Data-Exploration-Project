@@ -1,4 +1,4 @@
-/* String functions to clean data - To replace NULL values by 0. */
+/* 1. String functions to clean data - To replace NULL values by 0. */
 
   SELECT 
     *,
@@ -17,7 +17,7 @@ FROM
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Generate email id to sales_reps */
+/* 2. Generate email id to sales_reps */
 
 SELECT 
     name,

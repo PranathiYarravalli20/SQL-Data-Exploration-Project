@@ -1,4 +1,4 @@
-/* Companies whose names start with 'C' */
+/* 1. Companies whose names start with 'C' */
 
 select a.name
 from papersales.accounts a
@@ -6,7 +6,7 @@ where a.name like 'M%';
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Sales Rep working in Midwest region and name starts with K (using logical operator AND) */
+/* 2. Sales Rep working in Midwest region and name starts with K (using logical operator AND) */
 
 SELECT 
     s.name rep_name, a.name acc_name, r.name region
@@ -22,7 +22,7 @@ ORDER BY a.name;
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Sales Rep that purchased standard qty >100 and poster qty > 50 ( using comparison operator) */
+/* 3. Sales Rep that purchased standard qty >100 and poster qty > 50 ( using comparison operator) */
 
 SELECT 
     Case 
@@ -46,7 +46,7 @@ ORDER BY unit_price;
 
 ------------------------------------------------------------------------------------------------------------------
 
-/* Orders occured BETWEEN dates '2015-1-1' AND '2016-1-1' */
+/* 4. Orders occured BETWEEN dates '2015-1-1' AND '2016-1-1' */
 
 SELECT 
     o.occurred_at, a.name, o.total, o.total_amt_usd

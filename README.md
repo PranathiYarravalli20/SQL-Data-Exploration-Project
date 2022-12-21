@@ -3,7 +3,7 @@
 ### Hypothetical Paper Company's Sales Data - Cleaning &amp; Exploration
 
 Sales data is used to explore different functional aspects of SQL from basic to advanced and project.
-Project description,functions,queries written,environment used is mentioned in readme.
+Project description,functions,queries written,environment used are mentioned in readme.
 
 ### Setting up the environment & Database used:
 
